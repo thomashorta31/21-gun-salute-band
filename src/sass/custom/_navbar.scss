@@ -1,0 +1,29 @@
+nav {
+  background-color: $cinnabar;
+  border-top: 10px solid $white;
+  border-bottom: 10px solid $white;
+
+  h2 {
+    @include rem-fallback(text-indent, -10000px);
+    height: 0;
+    margin: 0;
+  }
+
+  li {
+    float: left;
+    list-style-type: none;
+    /* @include rem-fallback(margin, 10px, 20px 10px 20px);*/
+    padding-left: 1rem;
+  }
+
+  li a {
+    text-decoration: none;
+    color: #333;
+    font-family: 'Bangers', cursive;
+    @include font-size(30);
+  }
+}
+
+.bottom-nav-border {
+  border-top: 20px solid $black;
+}

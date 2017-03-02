@@ -1,0 +1,58 @@
+@mixin rem-fallback($property, $values...) {
+  $max: length($values);
+  $pxValues: '';
+  $remValues: '';
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $pxValues: #{$pxValues + $value*16}px;
+
+    @if $i < $max {
+      $pxValues: #{$pxValues + " "};
+    }
+  }
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $remValues: #{$remValues + $value}rem;
+
+    @if $i < $max {
+      $remValues: #{$remValues + " "};
+    }
+  }
+  #{$property}: $pxValues;
+  #{$property}: $remValues;
+}
+
+@mixin font-size($sizeValue: 1.6, $line: $sizeValue * 1.5) {
+  font-size: ($sizeValue * 1) + px;
+  line-height: ($line * 1) + px;
+  font-size: ($sizeValue / 10) + rem;
+  line-height: ($line / 10) + rem;
+}
+
+/* Selection*/
+
+@mixin selection() {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/* Placeholder*/
+
+@mixin placeholder() {
+  color: #999;
+}
+
+/* Breakpoints*/
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $value: map-get($breakpoints, $breakpoint);
+
+    @media only screen and (min-width: $value) {
+      @content;
+    }
+  }
+  @warn "Unknown `#{$breakpoint}` in $breakpoints";
+}

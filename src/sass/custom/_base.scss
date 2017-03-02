@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Bahiana|Bangers');
+@import 'normalize';
+
+/* Fonts
+     ========================================================================== */
+
+html, button, input, select, textarea {
+}
+
+.giga {
+}
+
+.mega {
+}
+
+h1, .alpha {
+  color: $fire;
+}
+
+h2, .beta {
+}
+
+h3, .gamma {
+}
+
+h4, .delta {
+}
+
+h5, .epsilon {
+}
+
+h6, .zeta {
+}
+
+p {
+}
+
+/* Defaults
+     ========================================================================== */
+
+html {
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+body {
+  font-family: Georgia;
+  margin: 0;
+  background-color: $bright-turquoise;
+  color: $white;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+::-moz-selection {
+  @include selection();
+}
+
+::selection {
+  @include selection();
+}
+
+::-webkit-input-placeholder {
+  @include placeholder();
+}
+
+::-moz-placeholder {
+  @include placeholder();
+}
+
+:-ms-input-placeholder {
+  @include placeholder();
+}
+
+img {
+  vertical-align: middle;
+}
