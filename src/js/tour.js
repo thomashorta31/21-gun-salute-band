@@ -20,12 +20,7 @@ const tour = [
     imgSrc: '/img/venue/Comerica.gif',
     lineup: 'Bring Me The Horizon, The American Nightmare, Underoath, Beartooth',
   },
-  {
-    name: 'Jerry',
-    instrument: 'Bass',
-    imgSrc: '/img/jerry-bass.jpg',
-    bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  },
+
 ];
 
 const markup = `
