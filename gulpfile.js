@@ -27,6 +27,8 @@ var gulp       = require('gulp'),
       },
       js: {
         all: [
+          './src/js/members.js',
+          './src/js/tour.js',
           './src/js/main.js',
           './src/js/menu.js',
           './src/js/jump-text.js'

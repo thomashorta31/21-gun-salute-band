@@ -1,21 +1,21 @@
 const tour = [
   {
     city: 'Los Angeles',
-    dates: '3/29'
+    date: '3/29',
     venue: 'Shrine Expo',
     imgSrc: '/img/venue/shrine.gif',
     lineup: 'Bring Me The Horizon, The American Nightmare, Underoath, Beartooth',
   },
   {
     city: 'San Diego',
-    dates: '3/30'
+    date: '3/30',
     venue: 'Soma Sports Arena',
     imgSrc: '/img/venue/soma.jpg',
     lineup: 'Bring Me The Horizon, The American Nightmare, Underoath, Beartooth',
   },
   {
     city: 'Arizona',
-    dates: '4/1'
+    date: '4/1',
     venue: 'Comerica Theatre',
     imgSrc: '/img/venue/Comerica.gif',
     lineup: 'Bring Me The Horizon, The American Nightmare, Underoath, Beartooth',
@@ -23,19 +23,24 @@ const tour = [
 
 ];
 
-const markup = `
-<div class="card-group">
-   ${tour.map(dates => `
-  <div class="card">
-    <img class="card-img-top img-fluid" src="${dates.imgSrc}" alt="${dates.city}">
-      <div class="card-block">
-        <h4 class="card-title">${dates.city}</h4>
-        <p class="card-text">${dates.lineup}</p>
-        <p class="card-text"><small class="text-muted">${dates.venue}</small></p>
-      </div>
-    </div>`).join('')}
-</div>
-`;
+// console.log(tour.map(tourDate => `${tourDate.city}`));
+const tourContent = `
+ <div class="card-group">
+    ${tour.map(tourDate => `
+   <div class="card">
+     <img class="card-img-top img-fluid" src="${tourDate.imgSrc}" alt="${tourDate.city}">
+       <div class="card-block">
+         <h4 class="card-title">${tourDate.city}</h4>
+         <p class="card-text">${tourDate.lineup}</p>
+         <p class="card-text"><small class="text-muted">${tourDate.venue}</small></p>
+       </div>
+     </div>`).join('')}
+ </div>
+ `;
 
-const featured = document.querySelector('.tour');
-featured.innerHTML = markup;
+if (document.querySelector('.tour')) {
+  let tourPage = document.querySelector('.tour');
+  tourPage.innerHTML = tourContent;
+} else {
+  tourPage = `<p>No Content yet</p>`;
+}
